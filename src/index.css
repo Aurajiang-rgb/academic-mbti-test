@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-black text-zinc-100 antialiased;
+    font-family:
+      'Noto Sans SC',
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Helvetica,
+      Arial,
+      'Apple Color Emoji',
+      'Segoe UI Emoji';
+  }
+
+  ::selection {
+    background: rgba(34, 197, 94, 0.35);
+    color: rgb(250 250 250);
+  }
+}
+
+@layer utilities {
+  .font-orbitron {
+    font-family: Orbitron, ui-sans-serif, system-ui;
+  }
+
+  .font-jetbrains {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      'Liberation Mono', 'Courier New', monospace;
+  }
+
+  .cyber-noise {
+    background-image:
+      radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      radial-gradient(rgba(239, 68, 68, 0.08) 1px, transparent 1px);
+    background-size: 18px 18px, 26px 26px;
+    background-position: 0 0, 9px 13px;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+  }
+
+  .glitch-text {
+    position: relative;
+    display: inline-block;
+  }
+
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.85;
+    mix-blend-mode: screen;
+  }
+
+  .glitch-text::before {
+    color: rgba(34, 197, 94, 0.95);
+    transform: translate(-1px, 0);
+    clip-path: inset(0 0 58% 0);
+    animation: glitchShift 1.05s infinite steps(2, end);
+  }
+
+  .glitch-text::after {
+    color: rgba(239, 68, 68, 0.95);
+    transform: translate(1px, 0);
+    clip-path: inset(42% 0 0 0);
+    animation: glitchShift 1.25s infinite steps(2, end);
+    animation-direction: reverse;
+  }
+
+  .kbd-chip {
+    @apply rounded-md border border-emerald-400/25 bg-white/5 px-2 py-1 text-[11px] font-semibold tracking-wide text-emerald-200/90;
+    box-shadow:
+      0 0 0 1px rgba(239, 68, 68, 0.15),
+      0 10px 28px rgba(0, 0, 0, 0.55);
+  }
+}
