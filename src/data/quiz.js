@@ -50,7 +50,7 @@ export const QUESTIONS = [
     options: [
       { text: '深吸一口气，新建一个 Word 文档，把问题一条条列出来准备补实验', scores: { S: 1, Pr: 1 } },
       { text: '先在心里怒骂，冷静之后开始思考如何回复审稿人', scores: { C: 1 , Pr: 1} },
-      { text: '在实验室里大骂五分钟，然后发一条仅导师不可见的阴阳怪气朋友圈',scores: {C: 1}},
+      { text: '在实验室里大骂五分钟，然后卡DDL回复审稿人',scores: {C: 1,  Sl: 1}},
       { text: '去厕所或者楼道偷偷哭一场，觉得自己不适合搞科研', scores: { C: 1, I: 1 } },
     ],
   },
@@ -59,9 +59,9 @@ export const QUESTIONS = [
     text: '这周五导师去外地开会，明确下周一才回来，你此时的真实状态是：',
     options: [
       { text: '终于没人打扰了！周末必须一口气把 Intro 写完！', scores: { Pr: 1 } },
-      { text: '照常按部就班看文献做实验，导师在不在影响为零', scores: { Pr: 1 } },
-      { text: '打开王者荣耀/Steam/原神，这不就是法定节假日吗？', scores: { Sl: 1 } },
-      { text: '人在工位坐，魂在B站飘。一天只看一篇文献摘要，还睡了一觉', scores: { Sl: 1 } },
+      { text: '照常看文献做实验，导师在不在影响为零', scores: { Pr: 1 } },
+      { text: '打开王者荣耀/Steam/原神，一边摸鱼一边看文献', scores: { Sl: 1 } },
+      { text: '马上买了一张机票/车票，美美休假', scores: { Sl: 1 } },
     ],
   },
   {
@@ -70,7 +70,7 @@ export const QUESTIONS = [
     options: [
       { text: "眼睛一亮迎上去：'老师，正好有个新idea想跟您探讨下！'", scores: { P: 1 } },
       { text: "正常打招呼：'老师好'，快速擦肩而过", scores: { P: 1, S: 1 } },
-      { text: '瞳孔地震，立刻低头假装手机回消息，祈祷他看不见我', scores: { I: 1 } },
+      { text: '瞳孔地震，立刻低头假装手机回消息，假装没看到', scores: { I: 1 } },
       { text: '迅速转身，绕远路回实验室', scores: { I: 1 } },
     ],
   },

@@ -23,14 +23,11 @@ export function QuizScreen({
       <div className="flex items-end justify-between gap-3">
         <div className="space-y-2">
           <div className="font-jetbrains text-[11px] font-semibold tracking-[0.35em] text-emerald-300/70">
-            QUIZ_MODE
+            
           </div>
           <div className="text-lg font-semibold text-white">第 {index + 1} / {total} 题</div>
         </div>
-        <div className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 font-jetbrains text-[11px] text-zinc-300">
-          SCORE_STREAM
-        </div>
-      </div>
+              </div>
 
       <div className="space-y-2">
         <div className="h-2 w-full overflow-hidden rounded-full border border-white/10 bg-black/40">
@@ -59,8 +56,7 @@ export function QuizScreen({
 
         <div className="relative space-y-4">
           <div className="font-jetbrains text-[11px] text-zinc-400">
-            Q{String(question.id).padStart(2, '0')} · SIGNAL_IN
-          </div>
+           </div>
 
           <h2 className="text-[17px] font-semibold leading-snug text-white">{question.text}</h2>
 
@@ -123,8 +119,8 @@ export function QuizScreen({
       </section>
 
       <div className="text-center text-[11px] text-zinc-500">
-        选中后会<span className="font-semibold text-zinc-300">短暂确认</span>
-        ，再<span className="font-semibold text-zinc-300">淡出 / 淡入</span>切换题目。
+        <span className="font-semibold text-zinc-300"></span>
+        <span className="font-semibold text-zinc-300"></span>
       </div>
     </div>
   )

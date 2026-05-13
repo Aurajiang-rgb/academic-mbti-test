@@ -3,7 +3,7 @@ export function LandingScreen({ onStart }) {
     <div className="flex flex-1 flex-col justify-between gap-10">
       <header className="space-y-5">
         <div className="flex items-center justify-between gap-3">
-          <div className="kbd-chip">本测试仅供娱乐，不允许任何商业用途</div>
+          <div className="kbd-chip text-center">本测试仅供娱乐</div>
           <div className="text-[11px] font-semibold tracking-[0.35em] text-emerald-300/70">
           </div>
         </div>
@@ -17,7 +17,7 @@ export function LandingScreen({ onStart }) {
               科研发疯综合征确诊指南：
             </span>
             <span className="mt-1 block bg-gradient-to-r from-emerald-300 via-white to-rose-400 bg-clip-text text-transparent">
-              测测你的「学术怨气值」
+              测测你的「学术人格」
             </span>
           </h1>
 

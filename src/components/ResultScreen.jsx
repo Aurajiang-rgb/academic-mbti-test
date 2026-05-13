@@ -232,58 +232,33 @@ export function ResultScreen({ profileKey, scores, onRestart }) {
 
   return (
     <div className="flex flex-1 flex-col gap-6">
-      <header className="space-y-3">
-        <div className="flex items-center justify-between gap-3">
-          <div className="font-jetbrains text-[11px] font-semibold tracking-[0.35em] text-emerald-300/70">
-            RESULT_LOCK
-          </div>
-          <button
+      <header className="flex items-center justify-between gap-3">
+        <button
+            type="button"
+            disabled={exporting}
+            onClick={handleSavePoster}
+            className="shrink-0 rounded-2xl border border-emerald-400/40 bg-emerald-400/10 px-4 py-1.5 text-[11px] font-bold text-emerald-100 shadow-neon transition hover:border-emerald-300/70 hover:bg-emerald-400/15 disabled:opacity-50"
+          >
+            {exporting ? '正在合成海报…' : '保存海报 PNG（仅限电脑网页可保存）'}
+            </button>
+            <button
             type="button"
             onClick={onRestart}
-            className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[11px] font-semibold text-zinc-200 transition hover:border-emerald-300/35 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/55"
+            className="shrink-0 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[11px] font-semibold text-zinc-200 transition hover:border-emerald-300/35 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/55"
           >
             再测一次
           </button>
-        </div>
 
-        <div className="space-y-2">
-          <div className="text-xs font-semibold text-zinc-400">匹配画像 Key</div>
-          <div className="flex flex-wrap items-center gap-2 text-center">
-            <span className="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jetbrains text-sm font-bold text-emerald-200 text-center">
-              {profileKey}
-            </span>
-            <span className="text-sm text-zinc-400 "></span>
-          </div>
-        </div>
-      </header>
+           </header>
 
-      {!profile ? (
+              {!profile ? (
         <div className="rounded-3xl border border-rose-500/25 bg-rose-500/10 p-4 text-sm text-rose-100">
           未匹配到预设画像（这在当前题库下理论上不该发生）。请截图反馈开发者。
         </div>
       ) : (
         <>
           <section className="space-y-4">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-            <div className="mt-1 text-[11px] leading-relaxed text-zinc-500">
-                  下方整块即为导出区域（含标题 / 角色 / 科研MBTI / 匹配度 / 标签 / 描述）。
-                  {isMobilePosterUi()
-                    ? ' 保存成功后可长按预览图存入相册。'
-                    : ' 保存后将下载高清 PNG。'}
-                </div>
-              </div>
-              <button
-                type="button"
-                disabled={exporting}
-                onClick={handleSavePoster}
-                className="shrink-0 rounded-2xl border border-emerald-400/40 bg-emerald-400/10 px-5 py-2.5 text-xs font-bold text-emerald-100 shadow-neon transition hover:border-emerald-300/70 hover:bg-emerald-400/15 disabled:opacity-50"
-              >
-                {exporting ? '正在合成海报…' : '保存海报 PNG'}
-              </button>
-            </div>
-
-            <div className="flex justify-center">
+             <div className="flex justify-center">
               <PosterExportSurface ref={captureRef} profileKey={profileKey} profile={profile} />
             </div>
           </section>
